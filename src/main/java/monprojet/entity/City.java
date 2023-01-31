@@ -21,6 +21,14 @@ public class City {
     @Size(min = 2)
     private String name;
 
+    public int getPopulation() {
+        return population;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     private int population;
 
     @NonNull

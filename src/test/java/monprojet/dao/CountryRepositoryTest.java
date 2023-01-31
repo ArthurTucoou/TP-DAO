@@ -43,4 +43,21 @@ public class CountryRepositoryTest {
         assertEquals(combienDePaysDansLeJeuDeTest, nombre, "On doit trouver 4 pays" );
     }
 
+    @Test
+    void testCalculPopulation() {
+        log.info("On compte les enregistrements de la table 'Country'");
+        Integer idFrance = 1;
+        Integer popFrance = 12;
+        Integer populationTotale = countryDAO.popTotale(idFrance);
+        assertEquals(popFrance, populationTotale, "Population totale doit être 12" );
+    }
+
+    @Test
+    void testListePaysEtPopulation() {
+        log.info("On compte les enregistrements de la requête");
+        int combienDEnregistrementDansLeJeuDeTest = 3;
+        int nombre = countryDAO.populationParPays().size();
+        assertEquals(combienDEnregistrementDansLeJeuDeTest, nombre, "On doit trouver 3 lignes" );
+    }
+
 }
